@@ -1,6 +1,8 @@
-#ifdef SYNTHCLIPSE
-#include <synthclipse>
+
+#ifdef SYNTHCLIPSE_ONLY
+#define kore main
 #endif
+
 
 #ifdef GL_ES
 precision mediump float;
@@ -14,9 +16,5 @@ void kore() {
 	vec4 texcolor = texture2D(tex, texCoord) * color;
 	texcolor.rgb *= color.a;
 	gl_FragColor = texcolor;
-}
-
-void main(){
-	kore();
 }
 
